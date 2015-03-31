@@ -189,7 +189,14 @@ var SunriseSunsetLayer = (function(){
                 }
             else
                 {
-                this.shadow = new google.maps.Polygon({zIndex:10 , paths:this.shadowAlone?[shadow]:[this.all,shadow] ,strokeWeight:0 , fillColor:"#000000" , fillOpacity:0.35 , geodesic:true });
+                this.shadow = new google.maps.Polygon({
+                    zIndex:10 , 
+                    paths:this.shadowAlone ? [shadow] : [this.all,shadow],
+                    strokeWeight:0, 
+                    fillColor:"#000000", 
+                    fillOpacity:0.85, 
+                    geodesic:true 
+                });
                 this.shadow.myData = this;
                 this.shadow.setMap(this.map);
                 
