@@ -25,10 +25,7 @@ var getCoords = function(pos) {
     //$("#riseTime").html(riseTime.sunriseLocalHours(now.getTimezoneOffset()));
     $("#riseTime").html(formatTime(riseTime.sunrise));
     $("#riseTime").fadeIn(3000);
-    var dnLayer = new SunriseSunsetLayer(map, "GOOGLE");
-    //var dnLayer = new DayNightLayer(map, "GOOGLE");
-    dnLayer.autoUpdate = true;
-    dnLayer.draw();
+    
 } 
 
 function getLocation() {
@@ -46,12 +43,17 @@ function getLocation() {
 function initialize() {
     var mapOptions = {
       center: { lat: lat, lng: lon},
-      zoom: 2.1,
+      zoom: 3,
       draggableCursor:null, //check later,
-      mapTypeId: google.maps.MapTypeId.TERRAIN
-      //mapTypeId: google.maps.MapTypeId.HYBRID //won't load properly rn
+      disableDefaultUI: true,
+      //mapTypeId: google.maps.MapTypeId.TERRAIN
+      mapTypeId: google.maps.MapTypeId.SATELLITE //won't load properly rn
     };
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    var dnLayer = new SunriseSunsetLayer(map, "GOOGLE");
+    //var dnLayer = new DayNightLayer(map, "GOOGLE");
+    dnLayer.autoUpdate = true;
+    dnLayer.draw();
 }
 
 $(document).ready(function() {
