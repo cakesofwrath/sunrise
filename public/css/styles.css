@@ -5,6 +5,11 @@ body {
     padding: 0;
 }
 
+.ig {
+  height: 350px;
+  width: auto;
+}
+
 #title {
     display: none;
     position: relative;
@@ -20,7 +25,7 @@ body {
 #map-canvas {
     position: absolute;
     bottom: 0;
-    height: 39%;
+    height: 48%;
     width: 100%;
     z-index: 9001;
 }

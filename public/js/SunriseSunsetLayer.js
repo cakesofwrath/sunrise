@@ -4,7 +4,6 @@
 // http://opensource.org/licenses/mit-license.php
 // https://gnu.org/licenses/gpl.html
 
-
 var SunriseSunsetLayer = (function(){
 
 
